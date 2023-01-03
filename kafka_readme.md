@@ -1,5 +1,5 @@
-I use AWS EC2 as the sercer. System is Ubuntu 20.2
-Step 1: Install Java and Bookeeper
+##I use AWS EC2 as the sercer. System is Ubuntu 20.2
+##Step 1: Install Java and Bookeeper
 Kafka is written in Java and Scala and requires jre 1.7 and above to run it. In this step, you need to ensure Java is installed.
 
 $sudo apt-get update
@@ -19,7 +19,7 @@ $ruok
 (are you okay) if it’s all okay it will end the telnet session and reply with
 
 imok
-Step 2: Create a Service User for Kafka
+##Step 2: Create a Service User for Kafka
 As Kafka is a network application creating a non-root sudo user specifically for Kafka minimizes the risk if the machine is to be compromised.
 
 $ sudo adduser kafka
@@ -29,7 +29,7 @@ $ sudo adduser kafka sudo
 Now, your User is ready, you need to log in using, the following command:
 
 $ su -l kafka
-Step 3: Download Apache Kafka
+##Step 3: Download Apache Kafka
 Now, you need to download and extract Kafka binaries in your Kafka user’s home directory. You can create your directory using the following command:
 
 $ mkdir ~/Downloads
@@ -45,7 +45,7 @@ Now simply extract the archive you have downloaded using the following command:
 $ tar -xvzf ~/Downloads/kafka.tgz --strip 1
 –strip 1 is used to ensure that the archived data is extracted in ~/kafka/.
 
-Step 4: Configuring Kafka Server
+##Step 4: Configuring Kafka Server
 The default behavior of Kafka prevents you from deleting a topic. Messages can be published to a Kafka topic, which is a category, group, or feed name. You must edit the configuration file to change this.
 
 The server.properties file specifies Kafka’s configuration options. Use nano or your favorite editor to open this file:
@@ -59,7 +59,7 @@ Now change the directory for storing logs:
 log.dirs=/home/kafka/logs
 Now you need to Save and Close the file. The next step is to set up Systemd Unit Files.
 
-Step 5: Setting Up Kafka Systemd Unit Files
+##Step 5: Setting Up Kafka Systemd Unit Files
 In this step, you need to create systemd unit files for the Kafka and Zookeeper service. This will help to manage Kafka services to start/stop using the systemctl command.
 
 Create systemd unit file for Zookeeper with below command:
@@ -127,7 +127,7 @@ $ sudo systemctl enable zookeeper
 $ sudo systemctl enable kafka
 You have successfully done the setup and installation of the Kafka server.
 
-Step 6: Testing installation
+##Step 6: Testing installation
 In this stage, you’ll put your Kafka setup to the test. To ensure that the Kafka server is functioning properly, you will publish and consume a “Hello World” message.
 
 In order to publish messages in Kafka, you must first:
