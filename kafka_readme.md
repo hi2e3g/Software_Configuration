@@ -35,7 +35,8 @@ Now, you need to download and extract Kafka binaries in your Kafka user’s home
 $ mkdir ~/Downloads
 You need to download the Kafka binaries using Curl:
 
-$ curl "https://downloads.apache.org/kafka/2.6.2/kafka_2.13-2.6.2.tgz" -o ~/Downloads/kafka.tgz
+checking the website: https://downloads.apache.org/kafka for the target version you wanna use. I use this 2.8.2 version
+$ curl "https://downloads.apache.org/kafka/2.8.2/kafka_2.13-2.8.2.tgz" -o ~/Downloads/kafka.tgz
 Create a new directory called Kafka and change your path to this directory to make it your base directory.
 
 $ mkdir ~/kafka && cd ~/kafka
